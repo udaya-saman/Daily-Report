@@ -1146,7 +1146,7 @@ function calcAndRender() {
      </div>`
   ).join('');
 
-  const v = id => document.getElementById(id)?.value || ':';
+  const v = id => document.getElementById(id)?.value || '---';
   const msg =
 `*🍕 Pizza Hut Akuressa*
 *Daily Report - ${v('date')}*
@@ -1154,44 +1154,47 @@ function calcAndRender() {
 
 *Monthly Target : ${fmt(gn('monthlyTarget'))}*
 
-MTD Target : ${fmt(mtdTarget)}
-MTD Sale : ${fmt(mtdSale)}
-MTD Variance : ${fmtVarianceMsg(mtdV)}
+*MTD Target :* ${fmt(mtdTarget)}
+*MTD Sale :* ${fmt(mtdSale)}
+*MTD Variance :* ${fmtVarianceMsg(mtdV)}
 
-Day Target : ${fmt(dayTarget)}
-Today Sale : ${fmt(todaySale)}
-Variance : ${fmtVarianceMsg(dayV)}
-Tomorrow Target : ${getTomorrowTarget(dateVal)}
+*Day Target :* ${fmt(dayTarget)}
+*Today Sale :* ${fmt(todaySale)}
+*Variance :* ${fmtVarianceMsg(dayV)}
 
-ADS : ${fmt(ads)}
-ADT : ${fmt(adt)}
+*ADS :* ${fmt(ads)}
+*ADT :* ${fmt(adt)}
 
-HUTBOT MTD : ${v('hutbotMTD')}
-HUTBOT Today : ${v('hutbotToday')}
+*HUTBOT MTD :* ${v('hutbotMTD')}
+*HUTBOT Today :* ${v('hutbotToday')}
 
-MTD H&F : ${v('mtdHF')}
-MTD U30 : ${v('mtdU30')}
+*MTD H&F :* ${v('mtdHF')}
+*MTD U30 :* ${v('mtdU30')}
 
-Under 30 : ${v('under30')}
-Hot & Fresh : ${v('hotFresh')}
-Out of Door time U12 : ${v('outOfDoor')}
-Production time U3 : ${v('productionU3')}
-Delivery Transactions : ${v('deliveryTx')}
-Dispatch Deviation : ${v('dispatchDev')}
+*Under 30 :* ${v('under30')}
+*Hot & Fresh U20 :* ${v('hotFresh')}
+*Out of Door time U12 :* ${v('outOfDoor')}
+*Production time U3 :* ${v('productionU3')}
+*Delivery Transactions :* ${v('deliveryTx')}
+*Dispatch Deviation :* ${v('dispatchDev')}
 
-Smart GES : ${v('smartGes')}
-B2B : ${b2b}%
-Top Box : ${topB}%
-Overall Satisfaction : ${osat}%
-Responses : ${autoTot > 0 ? autoTot.toLocaleString('en-US') : ':'}
+*MTD GES : ${autoTot > 0 ? autoTot.toLocaleString('en-US') : '---'}*
+*Smart GES :* ${v('smartGes')}
+*Top Box :* ${topB}%
+*B2B :* ${b2b}%
+*Overall Satisfaction :* ${osat}%
 
-5 Star Overall Rating : ${v('overallRating')}
-Delivered U30 : ${v('deliveredU30')}
-Annual TM Turnover star rating : ${v('annualTMTurnover')}
-Win-Score star Rating : ${v('winScore')}
-Brand Star Rating : ${v('brandRating')}
-FSCC Star Rating : ${v('fsccRating')}
-Hutbot On time Star Rating : ${v('hutbotOnTime')}
+*5 Star Overall Rating :* ${v('overallRating')}
+*Delivered U30 :* ${v('deliveredU30')}
+*Annual TMTO star rating :* ${v('annualTMTurnover')}
+*Win-Score star Rating :* ${v('winScore')}
+*Brand Star Rating :* ${v('brandRating')}
+*FSCC Star Rating :* ${v('fsccRating')}
+*Hutbot On time Star Rating :* ${v('hutbotOnTime')}
+
+*━━━━━━━━━━━━━━━━*
+*Tomorrow Target : ${getTomorrowTarget(dateVal)}*
+*━━━━━━━━━━━━━━━━*
 `;
 
   document.getElementById('msgOutput').value = msg;
